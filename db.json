@@ -2,10 +2,10 @@
   "invitations": [
     {
       "id": 10,
-      "companyName": "nameasd fasd fasd fa sdf asd asd fasd fasd fasdf sdf asd fsd",
+      "companyName": "Nazwa firmy",
       "dateFrom": "Sun Dec 27 2020 18:36:00 GMT+0100",
       "dateTo": "Sun Dec 27 2020 19:36:00 GMT+0100",
-      "invitationName": "nameasd fasd fasd fa sdf asd asd fasd fasd fasdf sdf asd fsdnameasd fasd fasd fa sdf asd asd fasd fasd fasdf sdf asd fsdnameasd fasd fasd fa sdf asd asd fasd fasd fasdf sdf asd fsdnameasd fasd fasd fa sdf asd asd fasd fasd fasdf sdf asd fsd",
+      "invitationName": "Przykładowa dłuższa nazwa spotkania",
       "personCount": 12,
       "status": "canceled"
     },

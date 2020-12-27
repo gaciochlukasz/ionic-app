@@ -1,5 +1,58 @@
-<ion-list>
-  <ion-item *ngFor="let invitation of invitations | async">
-    <ion-label>{{invitation.id}}</ion-label>
+<ion-list class="invitation-list-mobile">
+  <ion-item
+    class="invitation-list-mobile_item"
+    *ngFor="let invitation of invitations | async"
+  >
+    <div class="invitation-list-mobile_item_elements">
+      <div class="invitation-list-mobile_item_elements_section-1">
+        <ul>
+          <li
+            [ngClass]="
+              invitation.status === statusEnum.waiting
+                ? 'invitation-list-mobile_item_status-waiting'
+                : invitation.status === statusEnum.done
+                ? 'invitation-list-mobile_item_status-done'
+                : invitation.status === statusEnum.canceled
+                ? 'invitation-list-mobile_item_status-canceled'
+                : ''
+            "
+          >
+            <ion-label class="invitation-list-mobile_item_status-text">
+              {{ invitation.status | status }}
+            </ion-label>
+          </li>
+        </ul>
+        <label class="invitation-list-mobile_item_elements_section-1_id">{{
+          invitation.id
+        }}</label>
+      </div>
+      <div class="invitation-list-mobile_item_elements_section-2">
+        <label
+          class="invitation-list-mobile_item_elements_section-2_company-name"
+          >{{ invitation.companyName }}</label
+        >
+        <label
+          class="invitation-list-mobile_item_elements_section-2_invitation-name"
+          >{{ invitation.invitationName }}</label
+        >
+      </div>
+      <div class="invitation-list-mobile_item_elements_section-3">
+        <label
+          ><ion-icon class="invitation-list-mobile_item_elements_section-3_icon" name="time-outline"></ion-icon
+          >{{ invitation.dateFrom | date: "HH:mm" }} -
+          {{ invitation.dateTo | date: "HH:mm" }}
+        </label>
+        <label>
+          <ion-icon class="invitation-list-mobile_item_elements_section-3_icon" name="calendar-clear-outline"></ion-icon>
+          {{
+            invitation.dateFrom | date: "dd.MM.yyyy":undefined:"pl"
+          }}</label
+        >
+        <label
+          ><ion-icon class="invitation-list-mobile_item_elements_section-3_icon" name="people-outline"></ion-icon
+          >{{ invitation.personCount }}</label
+        >
+      </div>
+    </div>
   </ion-item>
 </ion-list>

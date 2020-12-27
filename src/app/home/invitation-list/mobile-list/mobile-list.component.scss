@@ -1,0 +1,99 @@
+.invitation-list-mobile {
+  &_item {
+    --ion-background-color: white;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    --border-style: none;
+
+    &_elements {
+      padding: 10px 5px;
+      width: 100%;
+
+      &_section-1,
+      &_section-2,
+      &_section-3 {
+        padding-bottom: 10px;
+      }
+
+      &_section-1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: lightgray solid 1px;
+        margin-bottom: 20px;
+
+        ul {
+          margin: 0;
+          padding-left: 25px;
+        }
+
+        &_id {
+          color: lightgray;
+          padding-top: 10px;
+        }
+      }
+
+      &_section-2 {
+        display: flex;
+        flex-direction: column;
+
+        &_company-name {
+          font-size: 18px;
+          font-weight: 600;
+        }
+
+        &_invitation-name {
+          color: lightgray;
+          font-size: 14px;
+        }
+      }
+
+      &_section-3 {
+        display: flex;
+        justify-content: space-between;
+
+        label {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          ion-icon {
+            position: relative;
+            top: -2px;
+            font-size: 20px;
+            padding-right: 5px;
+          }
+
+          @media (max-width: 360px) {
+            font-size: 12px;
+
+            ion-icon {
+                top: 0;
+            }
+          }
+        }
+      }
+    }
+
+    &_status-waiting::marker {
+      color: rgb(48, 106, 233);
+      font-size: 35px;
+    }
+
+    &_status-done::marker {
+      color: rgb(43, 211, 43);
+      font-size: 35px;
+    }
+
+    &_status-canceled::marker {
+      color: red;
+      font-size: 35px;
+    }
+
+    &_status-text {
+      position: relative;
+      top: -4px;
+      font-weight: 600;
+    }
+  }
+}
