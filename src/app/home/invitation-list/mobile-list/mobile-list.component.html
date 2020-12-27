@@ -38,19 +38,26 @@
       </div>
       <div class="invitation-list-mobile_item_elements_section-3">
         <label
-          ><ion-icon class="invitation-list-mobile_item_elements_section-3_icon" name="time-outline"></ion-icon
-          >{{ invitation.dateFrom | date: "HH:mm" }} -
+          ><img
+            class="invitation-list-mobile_item_elements_section-3_icon"
+            src="/assets/icon/time-outline.svg"
+          />
+          {{ invitation.dateFrom | date: "HH:mm" }} -
           {{ invitation.dateTo | date: "HH:mm" }}
         </label>
         <label>
-          <ion-icon class="invitation-list-mobile_item_elements_section-3_icon" name="calendar-clear-outline"></ion-icon>
-          {{
-            invitation.dateFrom | date: "dd.MM.yyyy":undefined:"pl"
-          }}</label
+          <img
+            class="invitation-list-mobile_item_elements_section-3_icon"
+            src="/assets/icon/calendar-clear-outline.svg"
+          />
+          {{ invitation.dateFrom | date: "dd.MM.yyyy":undefined:"pl" }}</label
         >
         <label
-          ><ion-icon class="invitation-list-mobile_item_elements_section-3_icon" name="people-outline"></ion-icon
-          >{{ invitation.personCount }}</label
+          ><img
+            class="invitation-list-mobile_item_elements_section-3_icon"
+            src="/assets/icon/people-outline.svg"
+          />
+          {{ invitation.personCount }}</label
         >
       </div>
     </div>
