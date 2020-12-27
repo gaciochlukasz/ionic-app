@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Zaproszenie </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense"> </ion-header>
+
+  <div id="container">
+    <ion-button class="new-invitation-button" color="primary">
+      <ion-icon slot="start" name="add-outline"></ion-icon>
+        Nowe zaproszenie
+    </ion-button>
+    <app-desktop-list *ngIf="!(isMobile$ | async)"></app-desktop-list>
+    <app-mobile-list *ngIf="isMobile$ | async"></app-mobile-list>
+  </div>
+</ion-content>

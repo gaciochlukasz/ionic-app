@@ -1,0 +1,49 @@
+<ion-grid class="table">
+  <ion-row class="table_header">
+    <ion-col class="table_header_col" size="1">ID</ion-col>
+    <ion-col size="2">Firma</ion-col>
+    <ion-col size="1">Ilość osób</ion-col>
+    <ion-col size="2">Nazwa zaproszenia</ion-col>
+    <ion-col size="2">Data</ion-col>
+    <ion-col size="2">Godzina</ion-col>
+    <ion-col size="2">Status</ion-col>
+  </ion-row>
+  <ion-row *ngFor="let invitation of invitations | async" class="table_content">
+    <ion-col size="1">
+      <span
+        ><span><b>{{ invitation.id }}</b></span></span
+      >
+    </ion-col>
+    <ion-col size="2">
+      <span>{{ invitation.companyName }}</span>
+    </ion-col>
+    <ion-col size="1">
+      <span>{{ invitation.personCount }}</span>
+    </ion-col>
+    <ion-col size="2">
+      <span>{{ invitation.invitationName }}</span>
+    </ion-col>
+    <ion-col size="2">
+      <span>{{ invitation.dateFrom | date: "d MMMM y":undefined:"pl" }}</span>
+    </ion-col>
+    <ion-col size="2">
+      <span>{{ invitation.dateFrom | date: "HH:mm" }}</span> -
+      <span>{{ invitation.dateTo | date: "HH:mm" }}</span>
+    </ion-col>
+    <ion-col size="2">
+      <li
+        [ngClass]="
+          invitation.status === statusEnum.waiting
+            ? 'table_content_status-waiting'
+            : invitation.status === statusEnum.done
+            ? 'table_content_status-done'
+            : invitation.status === statusEnum.canceled
+            ? 'table_content_status-canceled'
+            : ''
+        "
+      >
+        <span class="table_content_status-text">{{ invitation.status | status }}</span>
+      </li>
+    </ion-col>
+  </ion-row>
+</ion-grid>

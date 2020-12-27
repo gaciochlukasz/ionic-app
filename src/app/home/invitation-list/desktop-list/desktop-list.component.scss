@@ -1,0 +1,44 @@
+.table {
+  & > .table_header {
+    background-color: #262e42;
+    color: white;
+    border-radius: 5px;
+  }
+
+  & > .table_content {
+    background-color: white;
+  }
+
+  .table_header,
+  .table_content {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 0 20px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    min-height: 60px;
+
+    &_status-waiting::marker {
+      color: rgb(48, 106, 233);
+      font-size: 35px;
+    }
+
+    &_status-done::marker {
+      color: rgb(43, 211, 43);
+      font-size: 35px;
+    }
+
+    &_status-canceled::marker {
+      color: red;
+      font-size: 35px;
+    }
+
+    &_status-text {
+      position: relative;
+      left: -20px;
+      top: -5px;
+      font-weight: 600;
+    }
+  }
+}
