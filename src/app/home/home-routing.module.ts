@@ -11,7 +11,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'invitations-list'
+        redirectTo: 'invitations-list',
+        pathMatch: 'full'
       },
       {
         path: 'invitations-list',
@@ -22,6 +23,11 @@ const routes: Routes = [
         component: AddNewInvitationComponent,
       }
     ]
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ];
 
