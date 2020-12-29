@@ -1,31 +1,24 @@
 {
   "invitations": [
     {
-      "id": 10,
+      "id": 1,
       "companyName": "Nazwa firmy",
       "dateFrom": "Sun Dec 27 2020 18:36:00 GMT+0100",
       "dateTo": "Sun Dec 27 2020 19:36:00 GMT+0100",
       "invitationName": "Przykładowa dłuższa nazwa spotkania",
       "personCount": 12,
-      "status": "canceled"
-    },
-    {
-      "id": 11,
-      "companyName": "name",
-      "dateFrom": "Sun Dec 27 2020 18:36:00 GMT+0100",
-      "dateTo": "Sun Dec 27 2020 19:36:00 GMT+0100",
-      "invitationName": "mnad",
-      "personCount": 12,
-      "status": "waiting"
-    },
-    {
-      "id": 12,
-      "companyName": "name",
-      "dateFrom": "Sun Dec 27 2020 18:36:00 GMT+0100",
-      "dateTo": "Sun Dec 27 2020 19:36:00 GMT+0100",
-      "invitationName": "mnad",
-      "personCount": 12,
-      "status": "done"
+      "status": "done",
+      "quests": [
+        {
+          "email": "jan.kowalski@gmail.com",
+          "firstName": "jan",
+          "lastName": "kowalski1",
+          "parkingPlaceNo": null,
+          "parkingReservation": false,
+          "phoneNr": "1234143",
+          "registrationNumber": null
+        }
+      ]
     }
   ]
 }

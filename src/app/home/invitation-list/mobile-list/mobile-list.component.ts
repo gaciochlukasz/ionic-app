@@ -1,19 +1,15 @@
-import { AppService } from './../../../services/app.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { StatusEnum } from 'src/app/enums/status.enum';
+import { InvitationModel } from 'src/app/models/invitation.model';
 
 @Component({
   selector: 'app-mobile-list',
   templateUrl: './mobile-list.component.html',
   styleUrls: ['./mobile-list.component.scss']
 })
-export class MobileListComponent implements OnInit {
-  invitations = this.appService.getInvitations();
+export class MobileListComponent {
+  @Input() invitations: InvitationModel[];
   statusEnum = StatusEnum;
 
-  constructor(private appService: AppService) { }
-
-  ngOnInit() {
-  }
-
+  constructor() { }
 }

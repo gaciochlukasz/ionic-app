@@ -7,7 +7,58 @@ ion-content {
   --ion-background-color: #f2f3f5;
 }
 
+ion-card {
+  --ion-background-color: white;
+  --ion-card-background: white;
+}
+
 ion-button {
   font-size: 12px;
   text-transform: initial;
+}
+
+ion-input {
+  min-width: 180px;
+  border: gray solid 1px;
+  border-radius: 5px;
+  color: black;
+}
+ion-input:hover {
+  border-width: 2px;
+  border-color: #c5017c;
+
+  --padding-top: 9px;
+  --padding-bottom: 9px;
+  --padding-right: 7px;
+}
+
+ion-datetime {
+  min-width: 180px;
+  border: gray solid 1px;
+  border-radius: 5px;
+  color: black;
+}
+
+ion-datetime:hover {
+  border-width: 2px;
+  border-color: #c5017c;
+
+  --padding-top: 9px;
+  --padding-bottom: 9px;
+  --padding-right: 7px;
+}
+
+ion-card {
+  max-width: 980px;
+  margin: auto;
+}
+
+ion-checkbox {
+  --border-radius: 3px;
+  --background-checked: none;
+  --checkmark-color: green;
+  --ion-color-primary: green;
+  --size: 18px;
+  --border-width: 2px;
+  --checkmark-width: 3px;
 }

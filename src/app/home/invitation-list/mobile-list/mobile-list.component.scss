@@ -91,6 +91,10 @@
       font-size: 35px;
     }
 
+    &_status-none::marker {
+        font-size: 35px;
+      }
+
     &_status-text {
       position: relative;
       top: -4px;

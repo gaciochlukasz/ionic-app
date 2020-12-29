@@ -1,19 +1,15 @@
+import { InvitationModel } from './../../../models/invitation.model';
 import { StatusEnum } from 'src/app/enums/status.enum';
-import { AppService } from './../../../services/app.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-desktop-list',
   templateUrl: './desktop-list.component.html',
   styleUrls: ['./desktop-list.component.scss']
 })
-export class DesktopListComponent implements OnInit {
-  invitations = this.appService.getInvitations();
+export class DesktopListComponent {
+  @Input() invitations: InvitationModel[];
   statusEnum = StatusEnum;
 
-  constructor(private appService: AppService) { }
-
-  ngOnInit() {
-  }
-
+  constructor() { }
 }

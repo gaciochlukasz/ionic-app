@@ -8,23 +8,23 @@
     <ion-col size="2">Godzina</ion-col>
     <ion-col size="2">Status</ion-col>
   </ion-row>
-  <ion-row *ngFor="let invitation of invitations | async" class="table_content">
+  <ion-row *ngFor="let invitation of invitations" class="table_content">
     <ion-col size="1">
       <span
         ><span><b>{{ invitation.id }}</b></span></span
       >
     </ion-col>
     <ion-col size="2">
-      <span>{{ invitation.companyName }}</span>
+      <span>{{ invitation.companyName || '-' }}</span>
     </ion-col>
     <ion-col size="1">
-      <span>{{ invitation.personCount }}</span>
+      <span>{{ invitation.personCount || '-'}}</span>
     </ion-col>
     <ion-col size="2">
-      <span>{{ invitation.invitationName }}</span>
+      <span>{{ invitation.invitationName || '-'}}</span>
     </ion-col>
     <ion-col size="2">
-      <span>{{ invitation.dateFrom | date: "d MMMM y":undefined:"pl" }}</span>
+      <span>{{ invitation.dateFrom ? (invitation.dateFrom | date: "d MMMM y":undefined:"pl") : '-' }}</span>
     </ion-col>
     <ion-col size="2">
       <span>{{ invitation.dateFrom | date: "HH:mm" }}</span> -
@@ -39,7 +39,7 @@
             ? 'table_content_status-done'
             : invitation.status === statusEnum.canceled
             ? 'table_content_status-canceled'
-            : ''
+            : 'table_content_status-none'
         "
       >
         <span class="table_content_status-text">{{ invitation.status | status }}</span>

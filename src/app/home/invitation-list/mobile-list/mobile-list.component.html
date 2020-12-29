@@ -1,7 +1,7 @@
 <ion-list class="invitation-list-mobile">
   <ion-item
     class="invitation-list-mobile_item"
-    *ngFor="let invitation of invitations | async"
+    *ngFor="let invitation of invitations"
   >
     <div class="invitation-list-mobile_item_elements">
       <div class="invitation-list-mobile_item_elements_section-1">
@@ -14,7 +14,7 @@
                 ? 'invitation-list-mobile_item_status-done'
                 : invitation.status === statusEnum.canceled
                 ? 'invitation-list-mobile_item_status-canceled'
-                : ''
+                : 'invitation-list-mobile_item_status-none'
             "
           >
             <ion-label class="invitation-list-mobile_item_status-text">

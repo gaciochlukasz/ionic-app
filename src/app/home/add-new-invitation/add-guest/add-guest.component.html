@@ -1,0 +1,111 @@
+<div class="inner-content">
+  <form [formGroup]="formGuest" class="add-guest">
+    <ion-card>
+      <ion-card-header class="add-guest_header">
+        <ion-item class="add-guest_header_item" lines="none">
+          <ion-button
+            class="add-guest_header_item_back-button"
+            color="medium"
+            icon="chevron-back-outline"
+            (click)="goBack()"
+          >
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </ion-button>
+          <ion-label class="add-guest_header_item_label">
+            Dodaj gościa
+          </ion-label>
+        </ion-item>
+      </ion-card-header>
+
+      <ion-card-content class="add-guest_content">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-label class="add-guest_content_label">Imię:</ion-label>
+              <ion-input
+                class="add-guest_content_input"
+                formControlName="firstName"
+                maxlength="64"
+              ></ion-input>
+            </ion-col>
+            <ion-col>
+              <ion-label class="add-guest_content_label">Nazwisko:</ion-label>
+              <ion-input
+                class="add-guest_content_input"
+                formControlName="lastName"
+                maxlength="64"
+              ></ion-input>
+            </ion-col>
+            <ion-col size="12">
+              <ion-label class="add-guest_content_label">Email:</ion-label>
+              <ion-input
+                class="add-guest_content_input"
+                formControlName="email"
+              ></ion-input>
+            </ion-col>
+            <ion-col>
+              <ion-label class="add-guest_content_label"
+                >Numer telefonu:</ion-label
+              >
+              <ion-input
+                class="add-guest_content_input"
+                formControlName="phoneNr"
+                type="number"
+                pattern="/^-?\d+\.?\d*$/"
+                onKeyPress="if(this.value.length==12) return false;"
+              ></ion-input>
+            </ion-col>
+            <ion-col size="12">
+              <ion-item class="add-guest_content_item" lines="none">
+                <ion-label class="add-guest_content_label"
+                  >Rezerwacja miejca parkingowego</ion-label
+                >
+                <ion-checkbox
+                  slot="start"
+                  formControlName="parkingReservation"
+                ></ion-checkbox>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="formGuest.get('parkingReservation').value">
+            <ion-col size="12">
+              <ion-label class="add-guest_content_label"
+                >Numer tablicy rejestracyjnej:</ion-label
+              >
+              <ion-input
+                class="add-guest_content_input add-guest_content_input_toUpperCase"
+                formControlName="registrationNumber"
+                maxlength="10"
+              ></ion-input>
+            </ion-col>
+            <ion-col size="12">
+              <ion-label class="add-guest_content_label"
+                >Miejsce prakingowe:</ion-label
+              >
+              <ion-input
+                class="add-guest_content_input add-guest_content_input_toUpperCase"
+                formControlName="parkingPlaceNo"
+                maxlength="10"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-footer class="ion-no-border add-guest_footer">
+            <ion-grid class="add-guest_footer_grid">
+              <ion-row class="add-guest_footer_row">
+                <ion-col class="ion-align-self-end">
+                  <ion-button
+                    class="new-guest-button"
+                    color="primary"
+                    (click)="addGuest()"
+                  >
+                    Dodaj gościa
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-footer>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</div>

@@ -1,4 +1,5 @@
 import { StatusEnum } from './../enums/status.enum';
+import { GuestModel } from './guest.model';
 
 export interface InvitationModel {
     id: number;
@@ -8,4 +9,5 @@ export interface InvitationModel {
     dateFrom: Date;
     dateTo: Date;
     status: StatusEnum;
+    quests: GuestModel[];
 }
